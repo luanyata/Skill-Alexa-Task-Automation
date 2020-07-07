@@ -1,0 +1,115 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "ia ta",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "OpenProgram",
+          "slots": [
+            {
+              "name": "program",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "abrar o {program}",
+            "abra {program}",
+            "abrir o {program}",
+            "abrir {program}"
+          ]
+        },
+        {
+          "name": "CloseProgram",
+          "slots": [
+            {
+              "name": "program",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "Destruir {program}",
+            "Finalizar {program}",
+            "Encerrar {program}",
+            "Fechar {program}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "OpenProgram",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "program",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1178424155823.520695147761"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "CloseProgram",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "program",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.914901212605.247414991290"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1178424155823.520695147761",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quer que eu abra algum programa?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.914901212605.247414991290",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual programa você deseja encerrar?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "10"
+}
